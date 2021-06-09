@@ -1,0 +1,114 @@
+/* full */
+body{
+  background: linear-gradient(75deg, #2980b9, #8344ad);
+  font-family: sans-serif;
+}
+
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 430px;
+  width: 350px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+/* both sides */
+.front-face,
+.back-face{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ebf8f9;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  transition: transform .4s linear;
+}
+
+/* bg color */
+.cover{
+  background: linear-gradient(75deg, #8e44ad, #2980b9);
+  height: 115px;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+/* content */
+.profile{
+  height: 115px;
+  width: 115px;
+  border-radius: 50%;
+  padding: 5px;
+  background: white;
+  margin-top: 40px;
+}
+
+/* heading */
+.name{
+  font-size: 30px;
+  padding-top: 75px;
+}
+
+/* sub-heading */
+.tag{
+  padding: 5px 0;
+}
+
+/* text */
+.about{
+  margin-top: 10px;
+  padding: 0px 35px;
+  text-align: justify;
+  font-size: 15px;
+}
+
+h1{
+  color: #0d0d0d;
+}
+
+p{
+  padding: 20px;
+  color: #262626;
+  text-align: justify;
+}
+
+/* icons */
+i{
+  font-size: 30px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+i.fa-twitter-square{
+  padding-left: 0;
+  color: #38a1f3;
+}
+i.fa-wordpress{
+  color: #1d325c;
+}
+i.fa-youtube{
+  color: #eb1c14;
+}
+i.fa-instagram{
+  color: #d72888;
+}
+i.fa-linkedin{
+  color: #0077b5;
+}
+
+/* animation */
+.back-face{
+  transform: perspective(800px) rotateY(-180deg);
+}
+.front-face{
+  transform: perspective(800px) rotateY(0deg);
+}
+.container:hover > .back-face{
+  transform: perspective(800px) rotateY(0deg);
+}
+.container:hover > .front-face{
+  transform: perspective(800px) rotateY(180deg);
+}
